@@ -1,4 +1,7 @@
 {
+    "overlay":{
+        "about": "Sobre"
+    },
     "welcome": "Bem-vindo ao PomodoroInu",
     "description": "Este é um teste simples de internacionalização."
 }

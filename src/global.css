@@ -1,18 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --font-family:  Arial, sans-serif;
-  --text: rgba(255, 255, 255, 0.87);
-
-  --highlight: #BF4124;
-  --main-color: #A65C1C;
-  --secondary-color: #40241A;
-  --terciary-color: #733C1D;
-  --quartenary-color: #F2A74B;
-
+  font-family: sans-serif;
   font-size: 16px;
-  color: var(--text);
-  background-color: var(--main-color);
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #A65C1C;
 }
