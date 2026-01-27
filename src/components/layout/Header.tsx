@@ -1,16 +1,20 @@
+
+
 type HeaderProps = {
-    active: boolean
-    clickHamburguer: () => void
+    overlay: boolean,
+    settings: boolean,
+    clickHamburguer: () => void,
+    clickNut: () => void
 };
 
-export default function Header({ active, clickHamburguer }: HeaderProps){
+export default function Header({ overlay, settings, clickHamburguer, clickNut }: HeaderProps){
     return(
-        <header className="w-screen p-2 flex justify-between">
+        <header className="w-screen p-4 flex justify-between">
             <button onClick={clickHamburguer}>
-                <img src="/others/menu.png" alt="Menu Icon" width={30} className={active? "hidden" : "block" } />
+                <img src="/others/menu.png" alt="Menu Icon" width={30} className={overlay? "hidden" : "block" } />
             </button>
-            <button>
-                <img src="/others/nut.png" alt="Settings Icon" width={28} />
+            <button onClick={clickNut}>
+                <img src="/others/nut.png" alt="Settings Icon" width={28} className={settings? "hidden" : "block" }  />
             </button>
         </header>
     );

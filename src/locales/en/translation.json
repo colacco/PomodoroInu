@@ -1,7 +1,18 @@
 {
-    "overlay":{
-        "about": "About"
+    "header":{
+        "overlay":{
+            "about": "About"
+        },
+        "settings":{
+            "language": "Language",
+            "en": "English",
+            "pt": "Portuguese (Brazil)",
+            "study": "Study",
+            "break": "Break",
+            "sessions": "Sessions"
+        }
     },
     "welcome": "Welcome to PomodoroInu",
     "description": "This is a simple test of internationalization."
+    
 }
