@@ -14,4 +14,7 @@ body,
 #root {
   height: 100%;
   margin: 0;
+  background-color: #BF4124;
+  overflow: hidden;
+  touch-action: none;
 }

@@ -15,10 +15,10 @@ export default function Overlay({ active, closeOverlay }: OverlayProps){
         <div className="fixed h-screen w-screen flex flex-col bg-[rgba(0,0,0,0.5)]">
             <p onClick={closeOverlay} className="pl-5 pt-3 text-3xl font-close font-bold">X</p>
             <div className=" h-full flex flex-col items-center justify-center gap-10 text-3xl font-bold">
-                <button onClick={closeOverlay}>
+            <Link to="/" onClick={closeOverlay}>
                 Pomodoro
-            </button>
-            <Link to="/about">
+            </Link>
+            <Link to="/about" onClick={closeOverlay}>
                 {t("header.overlay.about")}
             </Link>
             <a href="https://github.com/colacco/PomodoroInu" target="_blank" className="mt-20">

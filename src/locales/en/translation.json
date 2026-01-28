@@ -12,7 +12,16 @@
             "sessions": "Sessions"
         }
     },
-    "welcome": "Welcome to PomodoroInu",
-    "description": "This is a simple test of internationalization."
-    
+    "about":{
+        "hiinu":{
+            "alt":"Inu saying Hi!"
+        },
+        "description":{
+            "p":"Pomodoro Inu is an app inspired by the Pomodoro technique, created to turn your study and work moments into a lighter, more focused experience. With customizable session times, you can study at your own pace while being accompanied by a friendly Shiba Inu dog. In every cycle, Inu stays by your side, bringing calm and companionship to help you stay focused."
+        },
+        "footer": {
+            "altgithub": "GitHub icon",
+            "altlinkedin": "LinkedIn icon"
+        }
+    }
 }

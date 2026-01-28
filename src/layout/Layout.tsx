@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../components/layout/Header";
 import Overlay from "../components/layout/Overlay";
-import Settings from "../components/layout/Settings";
+ import Settings from "../components/layout/Settings";
 
 export default function Layout(){
  const [ overlay, setOverlay ] = useState(false);
