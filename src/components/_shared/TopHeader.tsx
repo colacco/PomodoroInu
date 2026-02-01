@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-export default function TopHeader(){
+export default function TopHeader({className}: {className: string}){
     const { t } = useTranslation();
     
     return(
-        <ul className="w-full hidden sm:flex sm:justify-around sm:items-center sm:font-bold">
+        <ul className={`w-full hidden xl:text-xl ${className}`}>
             <Link to="/">
                 Pomodoro
             </Link>

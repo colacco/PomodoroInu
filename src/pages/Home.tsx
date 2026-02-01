@@ -1,10 +1,12 @@
+import { useState } from "react";
+import { useTimer } from '../hooks/usePomodoroContext';
 import Timer from "../components/page-sections/home/Timer";
 import Buttons from "../components/page-sections/home/Buttons";
 import Settings from "../components/page-sections/home/Settings";
 import Overlay from "../components/_shared/Overlay";
 import HomeHeader from "../components/page-sections/home/HomeHeader";
-import { useState } from "react";
-import { useTimer } from '../hooks/usePomodoroContext';
+import TopHeader from "../components/_shared/TopHeader";
+import Language from "../components/_shared/Language";
 import type TimerSettings from '../types/pomodoroType';
 
 export default function Home() {
@@ -37,36 +39,47 @@ export default function Home() {
   };
 
   return (
-    <main className={`h-screen flex flex-col justify-around items-center ${isStudying ? "" : "bg-secondary-color"}`}>
-      <Overlay 
-        active={overlay} 
-        closeOverlay={() => setOverlay(false)} 
+    <main className={`h-screen flex flex-col items-center ${isStudying ? "" : "bg-secondary-color"}`}>
+      <div className="w-screen pt-3 mb-10 hidden lg:grid lg:grid-cols-[1fr_2fr_1fr]">
+        <div></div>
+        <TopHeader className="lg:flex lg:justify-around lg:items-center lg:font-bold" />
+        <Language className="hidden lg:pr-10 lg:flex lg:justify-end"/>
+      </div>
+      
+      <Overlay
+        active={overlay}
+        closeOverlay={() => setOverlay(false)}
       />
-      <HomeHeader 
-        overlay={overlay} 
-        settings={activeSettings} 
-        clickHamburguer={() => setOverlay(true)} 
-        clickNut={() => setActiveSettings(true)} 
-      />
-      <Settings
+      <HomeHeader
+        overlay={overlay}
         settings={activeSettings}
-        closeSettings={() => setActiveSettings(false)}
-        timerSettings={settings}
-        onSettingsChange={handleInputChange}
+        clickHamburguer={() => setOverlay(true)}
+        clickNut={() => setActiveSettings(true)}
       />
-      <Timer
-        currentTime={currentTime}
-        currentSession={currentSession}
-        isStudying={isStudying}
-        isPaused={isPaused}
-        firstStart={firstStart}
-      />
-      <Buttons
-        start={handleStart}
-        restart={handleRestart}
-        isPaused={isPaused}
-        firstStart={firstStart}
-      />
+      <div className="h-full flex flex-col justify-around lg:flex lg:flex-row-reverse lg:items-center lg:gap-12 xl:gap-20">
+        <Timer
+          currentTime={currentTime}
+          currentSession={currentSession}
+          isStudying={isStudying}
+          isPaused={isPaused}
+          firstStart={firstStart}
+        />
+        {/* Em lg+: Settings fica acima dos Buttons, ambos à esquerda do Timer */}
+        <div className="flex flex-col gap-6">
+          <Settings
+            settings={activeSettings}
+            closeSettings={() => setActiveSettings(false)}
+            timerSettings={settings}
+            onSettingsChange={handleInputChange}
+          />
+          <Buttons
+            start={handleStart}
+            restart={handleRestart}
+            isPaused={isPaused}
+            firstStart={firstStart}
+          />
+        </div>
+      </div>
     </main>
   );
 }

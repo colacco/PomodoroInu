@@ -24,7 +24,7 @@ export default function Timer({ currentTime, currentSession, isStudying, isPause
     
 
     return (
-        <article className="h-[350px] w-[350px] border-[2px] rounded-full border-white flex flex-col items-center justify-around bg-transparent">
+        <article className="h-[350px] w-[350px] lg:h-[430px] lg:w-[430px] xl:h-[700px] xl:w-[700px] border-[2px] rounded-full border-white flex flex-col items-center justify-around bg-transparent">
             <div className="flex flex-col items-center">
                 <p className="text-2xl">{getStatus()}</p>
                 <p className="text-6xl">{formatTime(currentTime)}</p>

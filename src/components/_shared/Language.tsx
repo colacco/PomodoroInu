@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function Language(){
+export default function Language({className}: {className: string}){
     const [ isChecked, setIsChecked ] = useState(false);
     const { t, i18n } = useTranslation();
 
@@ -10,7 +10,7 @@ export default function Language(){
     }, [ isChecked, i18n ]);
     
     return(
-        <button className="flex justify-end">
+        <button className={className}>
                 <label htmlFor="lang" className="w-[30px]">
                     <input 
                         type="checkbox" 
