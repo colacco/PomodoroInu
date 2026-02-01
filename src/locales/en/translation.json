@@ -1,5 +1,5 @@
 {
-    "header":{
+    "home":{
         "overlay":{
             "about": "About"
         },
@@ -9,7 +9,20 @@
             "pt": "Portuguese (Brazil)",
             "study": "Study",
             "break": "Break",
-            "sessions": "Sessions"
+            "sessions": "Sessions",
+            "save": "Save"
+        },
+        "timer":{
+            "preparing": "Preparing",
+            "study": "Study",
+            "break": "Break",
+            "session": "Session"
+        },
+        "buttons":{
+            "start": "Start",
+            "continue": "Continue",
+            "pause": "Pause",
+            "reset": "Reset"
         }
     },
     "about":{

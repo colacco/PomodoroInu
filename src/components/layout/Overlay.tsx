@@ -6,26 +6,26 @@ type OverlayProps = {
     closeOverlay: () => void
 };
 
-export default function Overlay({ active, closeOverlay }: OverlayProps){
+export default function Overlay({ active, closeOverlay }: OverlayProps) {
     const { t } = useTranslation();
-    
-    if(!active) return null;
 
-    return(
-        <div className="fixed h-screen w-screen flex flex-col bg-[rgba(0,0,0,0.5)]">
+    if (!active) return null;
+
+    return (
+        <div className="fixed h-screen w-screen flex flex-col bg-[rgba(0,0,0,0.5)] z-50">
             <p onClick={closeOverlay} className="pl-5 pt-3 text-3xl font-close font-bold">X</p>
             <div className=" h-full flex flex-col items-center justify-center gap-10 text-3xl font-bold">
-            <Link to="/" onClick={closeOverlay}>
-                Pomodoro
-            </Link>
-            <Link to="/about" onClick={closeOverlay}>
-                {t("header.overlay.about")}
-            </Link>
-            <a href="https://github.com/colacco/PomodoroInu" target="_blank" className="mt-20">
-                <img src="./others/gitHub.png" alt="" />
-            </a>
+                <Link to="/" onClick={closeOverlay}>
+                    Pomodoro
+                </Link>
+                <Link to="/about" onClick={closeOverlay}>
+                    {t("home.overlay.about")}
+                </Link>
+                <a href="https://github.com/colacco/PomodoroInu" target="_blank" className="mt-20">
+                    <img src="./others/gitHub.png" alt="" />
+                </a>
             </div>
-            
+
         </div>
     )
 }

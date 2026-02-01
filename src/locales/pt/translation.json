@@ -1,5 +1,5 @@
 {
-    "header":{
+    "home": {
         "overlay":{
             "about": "Sobre"
         },
@@ -9,8 +9,21 @@
             "pt": "Português (Brasil)",
             "study": "Estudar",
             "break": "Pausa",
-            "sessions": "Sessões"
-        }    
+            "sessions": "Sessões",
+            "save": "Salvar"
+        },
+        "timer":{
+            "preparing": "Preparando",
+            "study": "Estudar",
+            "break": "Pausa",
+            "session": "Sessão"
+        },
+        "buttons":{
+            "start": "Iniciar",
+            "continue": "Continuar",
+            "pause": "Pausar",
+            "reset": "Resetar"
+        }
     },
     "about":{
         "hiinu":{

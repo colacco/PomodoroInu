@@ -7,7 +7,7 @@ type HeaderProps = {
 
 export default function Header({ overlay, settings, clickHamburguer, clickNut }: HeaderProps){
     return(
-        <header className="w-screen fixed p-4 flex justify-between">
+        <header className="w-screen pl-4 pr-4 flex justify-between">
             <button onClick={clickHamburguer}>
                 <img src="/others/menu.png" alt="Menu Icon" width={30} className={overlay? "hidden" : "block" } />
             </button>
