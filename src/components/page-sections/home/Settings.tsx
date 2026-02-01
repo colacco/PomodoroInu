@@ -12,7 +12,6 @@ interface SettingsProps {
 
 export default function Settings({ settings, closeSettings, timerSettings, onSettingsChange }: SettingsProps) {
     const { t, i18n } = useTranslation();
-
     const [language, setLanguage] = useState(i18n.language);
 
     const handleLanguageChange = (value: string) => {
@@ -20,9 +19,7 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
         i18n.changeLanguage(value);
     }
 
-
-    // Em telas lg+, sempre renderiza inline. Em telas menores, renderiza como modal apenas se settings for true
-    // O controle de visibilidade em mobile é feito via CSS (hidden quando !settings em mobile)
+    const inputClass = "w-10 pl-1 font-bold tracking-[0.3rem] rounded-md text-center bg-secondary-color placeholder-white placeholder:text-center";
 
     return (
         <>
@@ -105,7 +102,7 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                                     className="w-12 bg-transparent placeholder-white"
                                     maxLength={5}
                                     value={timerSettings.sessions || ''}
-                                    placeholder="5"
+                                    placeholder=""
                                     type="tel"
                                     name="session"
                                     id="session"
@@ -129,14 +126,13 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
             <div className="hidden lg:block w-[330px] p-3 border-2 rounded-3xl border-quartenary-color bg-terciary-color">
                 <ul className="flex flex-col gap-4">
                     <li className="flex items-center justify-between">
-                        <label htmlFor="study">{t("home.settings.study")}:</label>
+                        <label htmlFor="studyMin">{t("home.settings.study")}:</label>
                         <div className="flex gap-2 ">
                             <input
-                                className="w-10 pl-1 font-bold tracking-[0.5rem] rounded-md text-center bg-secondary-color placeholder-white placeholder:text-center"
-                                name="studyMin"
+                                className={inputClass}
                                 id="studyMin"
                                 value={timerSettings.sMin || ''}
-                                placeholder="00"
+                                placeholder="__"
                                 type="tel"
                                 maxLength={2}
                                 onChange={(e) => onSettingsChange('sMin', e.target.value)}
@@ -144,11 +140,10 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                             />
                             <p className=" text-center  text-1xl font-black ">:</p>
                             <input
-                                className="w-10 pl-1 font-bold tracking-[0.5rem] rounded-md text-center bg-secondary-color placeholder-white placeholder:text-center"
-                                name="studySec"
+                                className={inputClass}
                                 id="studySec"
                                 value={timerSettings.sSec || ''}
-                                placeholder="00"
+                                placeholder="__"
                                 type="tel"
                                 maxLength={2}
                                 onChange={(e) => onSettingsChange('sSec', e.target.value)}
@@ -157,14 +152,13 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                         </div>
                     </li>
                     <li className="flex items-center justify-between">
-                        <label htmlFor="break">{t("home.settings.break")}:</label>
+                        <label htmlFor="breakMin">{t("home.settings.break")}:</label>
                         <div className="flex gap-2 ">
                             <input
-                                className="w-10 pl-1 font-bold tracking-[0.5rem] rounded-md text-center bg-secondary-color placeholder-white placeholder:text-center"
-                                name="breakMin"
+                                className={inputClass}
                                 id="breakMin"
                                 value={timerSettings.bMin || ''}
-                                placeholder="05"
+                                placeholder="__"
                                 type="tel"
                                 maxLength={2}
                                 onChange={(e) => onSettingsChange('bMin', e.target.value)}
@@ -172,11 +166,9 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                             />
                             <p className=" text-center  text-1xl font-black ">:</p>
                             <input
-                                className="w-10 pl-1 font-bold tracking-[0.5rem] rounded-md text-center bg-secondary-color placeholder-white placeholder:text-center"
-                                name="breakSec"
-                                id="breakSec"
+                                className={inputClass}
                                 value={timerSettings.bSec || ''}
-                                placeholder="00"
+                                placeholder="__"
                                 type="tel"
                                 maxLength={2}
                                 onChange={(e) => onSettingsChange('bSec', e.target.value)}
@@ -190,7 +182,7 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                             className="w-12 rounded-md text-center bg-secondary-color placeholder-white placeholder:text-center"
                             maxLength={5}
                             value={timerSettings.sessions || ''}
-                            placeholder="5"
+                            placeholder="_"
                             type="tel"
                             name="session"
                             id="session"

@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
 export default function Language({className}: {className: string}){
-    const [ isChecked, setIsChecked ] = useState(false);
-    const { t, i18n } = useTranslation();
+     const { t, i18n } = useTranslation();
+    const [ isChecked, setIsChecked ] = useState(() => i18n.language === "pt");
 
     useEffect(() => {
         i18n.changeLanguage( isChecked? "pt" : "en" )
