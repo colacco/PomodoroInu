@@ -26,6 +26,9 @@
         }
     },
     "about":{
+        "aboutheader":{
+            "alt": "Bandeira do Brasil"
+        },
         "hiinu":{
             "alt":"Inu dizendo oi!"
         },

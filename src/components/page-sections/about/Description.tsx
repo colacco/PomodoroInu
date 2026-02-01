@@ -4,9 +4,9 @@ export default function Description(){
     const { t } = useTranslation();
 
     return(
-        <article className="p-5 flex flex-col gap-5">
-            <h1 className="text-3xl font-bold text-highlight underline">Pomodoro Inu</h1>
-            <p className="text-black">
+        <article className="h-full p-5 flex flex-col items-center gap-5 bg-white">
+            <h1 className="max-w-[600px] text-3xl font-bold text-highlight underline">Pomodoro Inu</h1>
+            <p className="max-w-[612px] text-black">
                 {t("about.description.p")}
             </p>
         </article>

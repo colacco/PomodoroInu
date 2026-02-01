@@ -5,7 +5,7 @@ type HeaderProps = {
     clickNut: () => void
 };
 
-export default function Header({ overlay, settings, clickHamburguer, clickNut }: HeaderProps){
+export default function HomeHeader({ overlay, settings, clickHamburguer, clickNut }: HeaderProps){
     return(
         <header className="w-screen pl-4 pr-4 flex justify-between">
             <button onClick={clickHamburguer}>

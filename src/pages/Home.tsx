@@ -1,8 +1,8 @@
 import Timer from "../components/page-sections/home/Timer";
 import Buttons from "../components/page-sections/home/Buttons";
 import Settings from "../components/page-sections/home/Settings";
-import Overlay from "../components/layout/Overlay";
-import Header from "../components/layout/Header";
+import Overlay from "../components/_shared/Overlay";
+import HomeHeader from "../components/page-sections/home/HomeHeader";
 import { useState } from "react";
 import { useTimer } from '../hooks/usePomodoroContext';
 import type TimerSettings from '../types/pomodoroType';
@@ -42,7 +42,7 @@ export default function Home() {
         active={overlay} 
         closeOverlay={() => setOverlay(false)} 
       />
-      <Header 
+      <HomeHeader 
         overlay={overlay} 
         settings={activeSettings} 
         clickHamburguer={() => setOverlay(true)} 

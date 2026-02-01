@@ -26,6 +26,9 @@
         }
     },
     "about":{
+        "aboutheader":{
+            "alt": "United States flag"
+        },
         "hiinu":{
             "alt":"Inu saying Hi!"
         },
