@@ -7,12 +7,12 @@ interface ButtonsProps {
     isPaused: boolean;
 }
 
-export default function Buttons({ start, restart, firstStart, isPaused  }: ButtonsProps) {
+export default function Buttons({ start, restart, firstStart, isPaused }: ButtonsProps) {
     const { t } = useTranslation();
 
     const getButtonText = () => {
-        if (firstStart) return t("home.buttons.start");
-        return isPaused ? t("home.buttons.continue") : t("home.buttons.pause");
+        if (firstStart) return "home.buttons.start";
+        return isPaused ? "home.buttons.continue" : "home.buttons.pause";
     };
 
     return (
@@ -21,7 +21,7 @@ export default function Buttons({ start, restart, firstStart, isPaused  }: Butto
                 onClick={start}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`w-[330px] p-3 rounded-2xl font-bold text-3xl  ${isPaused ? "bg-quartenary-color": "bg-highlight" }`}
+                className={`w-[330px] p-3 rounded-2xl font-bold text-3xl  ${isPaused ? "bg-quaternary-color" : "bg-highlight"}`}
             >
                 {t(getButtonText())}
             </motion.button>
@@ -29,7 +29,7 @@ export default function Buttons({ start, restart, firstStart, isPaused  }: Butto
                 onClick={restart}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-[330px] p-3 rounded-2xl border-4 border-quartenary-color font-bold text-3xl text-quartenary-color hover:bg-quartenary-color hover:text-white duration-300"
+                className="w-[330px] p-3 rounded-2xl border-4 border-quaternary-color font-bold text-3xl text-quaternary-color hover:bg-quaternary-color hover:text-white duration-300"
             >
                 {t("home.buttons.reset")}
             </motion.button>

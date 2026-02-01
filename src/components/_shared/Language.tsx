@@ -27,6 +27,7 @@ export default function Language({className}: {className: string}){
                         src={ isChecked ? "others/brazil.png" : "others/eua.png" }
                         alt={t("about.aboutheader.alt")} 
                         width={30}
+                        className="cursor-pointer"
                     />
                 </label>
             </button>

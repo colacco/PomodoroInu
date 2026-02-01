@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from "react-i18next";
-import { handleChange } from '../../../utils/timer';
 import type TimerSettings from '../../../types/pomodoroType';
 
 
@@ -14,10 +12,7 @@ interface SettingsProps {
 
 export default function Settings({ settings, closeSettings, timerSettings, onSettingsChange }: SettingsProps) {
     const { t, i18n } = useTranslation();
-    const [language, setLanguage] = useState(i18n.language);
-
     const handleLanguageChange = (value: string) => {
-        setLanguage(value);
         i18n.changeLanguage(value);
     }
 
@@ -29,82 +24,78 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
             {settings && (
                 <div className="lg:hidden fixed top-0 left-0 h-screen w-screen flex flex-col items-center gap-10 bg-[rgba(0,0,0,0.5)] z-50">
                     <p onClick={closeSettings} className="w-full pr-5 pt-3 text-end text-3xl font-close font-bold cursor-pointer"> X </p>
-                    <div className="w-[350px] p-10 border-2 rounded-3xl border-quartenary-color bg-terciary-color">
+                    <div className="w-[350px] p-10 border-2 rounded-3xl border-quaternary-color bg-tertiary-color">
                         <ul className="flex flex-col gap-8">
                             <li className="flex items-center justify-between">
                                 <label htmlFor="language">{t("home.settings.language")}</label>
                                 <select
-                                    value={language}
+                                    value={i18n.language}
                                     onChange={(e) => handleLanguageChange(e.target.value)}
-                                    className="bg-terciary-color outline-none text-end"
+                                    className="bg-tertiary-color outline-none text-end"
                                 >
                                     <option value="pt">Português (Brasil)</option>
                                     <option value="en">English</option>
                                 </select>
                             </li>
                             <li className="flex items-center justify-between">
-                                <label htmlFor="study">{t("home.settings.study")}:</label>
+                                <label htmlFor="studyMin">{t("home.settings.study")}:</label>
                                 <div className="flex gap-2 ">
                                     <input
-                                        className="w-10 pl-1 font-bold tracking-[0.5rem] bg-transparent"
-                                        name="studyMin"
+                                        className={inputClass}
                                         id="studyMin"
                                         value={timerSettings.sMin || ''}
-                                        placeholder="00"
+                                        placeholder="__"
                                         type="tel"
                                         maxLength={2}
                                         onChange={(e) => onSettingsChange('sMin', e.target.value)}
-                                        onInput={handleChange}
+                                        onInput={(e) => onSettingsChange('sMin', e.currentTarget.value)}
                                     />
                                     <p className=" text-center  text-1xl font-black ">:</p>
                                     <input
-                                        className="w-10 pl-1 font-bold tracking-[0.5rem] bg-transparent"
-                                        name="studySec"
+                                        className={inputClass}
                                         id="studySec"
                                         value={timerSettings.sSec || ''}
-                                        placeholder="00"
+                                        placeholder="__"
                                         type="tel"
                                         maxLength={2}
                                         onChange={(e) => onSettingsChange('sSec', e.target.value)}
-                                        onInput={handleChange}
+                                        onInput={(e) => onSettingsChange('sSec', e.currentTarget.value)}
                                     />
                                 </div>
                             </li>
                             <li className="flex items-center justify-between">
-                                <label htmlFor="break">{t("home.settings.break")}:</label>
+                                <label htmlFor="breakMin">{t("home.settings.break")}:</label>
                                 <div className="flex gap-2 ">
                                     <input
-                                        className="w-10 pl-1 font-bold tracking-[0.5rem] bg-transparent "
-                                        name="breakMin"
+                                        className={inputClass}
                                         id="breakMin"
                                         value={timerSettings.bMin || ''}
-                                        placeholder="00"
+                                        placeholder="__"
                                         type="tel"
                                         maxLength={2}
                                         onChange={(e) => onSettingsChange('bMin', e.target.value)}
-                                        onInput={handleChange}
+                                        onInput={(e) => onSettingsChange('bMin', e.currentTarget.value)}
                                     />
                                     <p className=" text-center  text-1xl font-black ">:</p>
                                     <input
-                                        className="w-10 pl-1 font-bold tracking-[0.5rem] bg-transparent placeholder-white"
-                                        name="breakSec"
+                                        className={inputClass}
                                         id="breakSec"
                                         value={timerSettings.bSec || ''}
-                                        placeholder="00"
+                                        placeholder="__"
                                         type="tel"
                                         maxLength={2}
                                         onChange={(e) => onSettingsChange('bSec', e.target.value)}
-                                        onInput={handleChange}
+                                        onInput={(e) => onSettingsChange('bSec', e.currentTarget.value)}
                                     />
                                 </div>
                             </li>
                             <li className="flex items-center justify-between">
                                 <label htmlFor="session">{t("home.settings.sessions")}:</label>
                                 <input
-                                    className="w-12 bg-transparent placeholder-white"
+                                    className="w-12 rounded-md text-center bg-secondary-color placeholder-white placeholder:text-center"
                                     maxLength={5}
                                     value={timerSettings.sessions || ''}
-                                    placeholder=""
+                                    placeholder="_"
                                     type="tel"
                                     name="session"
                                     id="session"
@@ -125,7 +116,7 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
             )}
 
             {/* Versão inline para telas lg+ - sempre visível */}
-            <div className="hidden lg:block w-[330px] p-3 border-2 rounded-3xl border-quartenary-color bg-terciary-color">
+            <div className="hidden lg:block w-[330px] p-3 border-2 rounded-3xl border-quaternary-color bg-tertiary-color">
                 <ul className="flex flex-col gap-4">
                     <li className="flex items-center justify-between">
                         <label htmlFor="studyMin">{t("home.settings.study")}:</label>
@@ -138,7 +129,7 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                                 type="tel"
                                 maxLength={2}
                                 onChange={(e) => onSettingsChange('sMin', e.target.value)}
-
+                                onInput={(e) => onSettingsChange('sMin', e.currentTarget.value)}
                             />
                             <p className=" text-center  text-1xl font-black ">:</p>
                             <input
@@ -149,7 +140,7 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                                 type="tel"
                                 maxLength={2}
                                 onChange={(e) => onSettingsChange('sSec', e.target.value)}
-                                onInput={handleChange}
+                                onInput={(e) => onSettingsChange('sSec', e.currentTarget.value)}
                             />
                         </div>
                     </li>
@@ -164,7 +155,7 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                                 type="tel"
                                 maxLength={2}
                                 onChange={(e) => onSettingsChange('bMin', e.target.value)}
-                                onInput={handleChange}
+                                onInput={(e) => onSettingsChange('bMin', e.currentTarget.value)}
                             />
                             <p className=" text-center  text-1xl font-black ">:</p>
                             <input
@@ -174,7 +165,7 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                                 type="tel"
                                 maxLength={2}
                                 onChange={(e) => onSettingsChange('bSec', e.target.value)}
-                                onInput={handleChange}
+                                onInput={(e) => onSettingsChange('bSec', e.currentTarget.value)}
                             />
                         </div>
                     </li>

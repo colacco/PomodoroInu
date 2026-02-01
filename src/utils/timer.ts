@@ -8,13 +8,3 @@ export const formatTime = (totalSeconds: number): string => {
     return `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 };
 
-export const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-    const target = e.currentTarget;
-    let value = target.value.replace(/[^0-9]/g, '');
-
-    if (parseInt(value) > 59) {
-        value = '59';
-    }
-
-    target.value = value;
-}

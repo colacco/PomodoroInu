@@ -1,9 +1,9 @@
 {
     "home": {
-        "overlay":{
+        "overlay": {
             "about": "Sobre"
         },
-        "settings":{
+        "settings": {
             "language": "Idioma",
             "en": "Inglês",
             "pt": "Português (Brasil)",
@@ -12,29 +12,29 @@
             "sessions": "Sessões",
             "save": "Salvar"
         },
-        "timer":{
+        "timer": {
             "preparing": "Preparando",
             "study": "Estudar",
             "break": "Pausa",
             "session": "Sessão",
             "alt": "Inu"
         },
-        "buttons":{
+        "buttons": {
             "start": "Iniciar",
             "continue": "Continuar",
             "pause": "Pausar",
             "reset": "Resetar"
         }
     },
-    "about":{
-        "aboutheader":{
+    "about": {
+        "aboutheader": {
             "alt": "Bandeira do Brasil"
         },
-        "hiinu":{
-            "alt":"Inu dizendo oi!"
+        "hiinu": {
+            "alt": "Inu dizendo oi!"
         },
-        "description":{
-            "p": "Pomodoro Inu é um aplicativo inspirado na técnica Pomodoro, criado para transformar seus momentos de estudo e trabalho em uma experiência mais leve e focada. Com a possibilidade de personalizar o tempo de cada sessão, você estuda no seu próprio ritmo enquanto é acompanhado por um simpático cachorro Inu Shiba. A cada ciclo, o Inu está ao seu lado, trazendo calma e companhia para manter a concentração."
+        "description": {
+            "p": "Pomodoro Inu é um aplicativo inspirado na técnica Pomodoro, criado para transformar seus momentos de estudo e trabalho em uma experiência mais leve e focada. Com a possibilidade de personalizar o tempo de cada sessão, você estuda no seu próprio ritmo enquanto é acompanhado por um simpático cachorro Shiba Inu. A cada ciclo, o Inu está ao seu lado, trazendo calma e companhia para manter a concentração."
         },
         "footer": {
             "altgithub": "Ícone do GitHub",

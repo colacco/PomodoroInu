@@ -7,16 +7,16 @@ import AboutHeader from "../components/page-sections/about/AboutHeader";
 
 export default function About() {
     const [overlay, setOverlay] = useState(false);
-    
+
     return (
-        
-        <section className="h-screen flex flex-col bg-quartenary-color">
+
+        <section className="h-screen flex flex-col bg-quaternary-color">
             <div className="flex-grow">
-                <Overlay 
-                    active={overlay} 
-                    closeOverlay={() => setOverlay(false)} 
+                <Overlay
+                    active={overlay}
+                    closeOverlay={() => setOverlay(false)}
                 />
-                <AboutHeader overlay={overlay} clickHamburguer={() => setOverlay(!overlay)}/>
+                <AboutHeader overlay={overlay} clickHamburguer={() => setOverlay(!overlay)} />
                 <HiInu />
                 <Description />
             </div>

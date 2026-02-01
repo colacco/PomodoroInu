@@ -91,7 +91,7 @@ export const useTimer = (settings: TimerSettings) => {
 
     const handleRestart = () => {
         if (!firstStart) {
-            setIsPaused(false);
+            setIsPaused(true);
             initializeTimer();
         }
     };

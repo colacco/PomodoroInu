@@ -33,9 +33,16 @@ export default function Home() {
   } = useTimer(settings);
 
   const handleInputChange = (field: keyof TimerSettings, value: string) => {
+    const cleanValue = value.replace(/[^0-9]/g, '');
+    let numericValue = parseInt(cleanValue) || 0;
+
+    if ((field === 'sMin' || field === 'sSec' || field === 'bMin' || field === 'bSec') && numericValue > 59) {
+      numericValue = 59;
+    }
+
     setSettings((prev) => ({
       ...prev,
-      [field]: parseInt(value) || 0,
+      [field]: numericValue,
     }));
   };
 
@@ -43,7 +50,7 @@ export default function Home() {
     <motion.main
       initial={false}
       animate={{
-        backgroundColor: isStudying ? "#1F1300" : "#1c0d0c"
+        backgroundColor: isStudying ? "#5C321C" : "#3D2016"
       }}
       transition={{ duration: 1.5, ease: "easeInOut" }}
       className="h-screen flex flex-col items-center overflow-hidden"
