@@ -16,7 +16,8 @@
             "preparing": "Preparing",
             "study": "Study",
             "break": "Break",
-            "session": "Session"
+            "session": "Session",
+            "alt": "Inu"
         },
         "buttons":{
             "start": "Start",

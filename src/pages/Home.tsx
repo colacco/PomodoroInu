@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { useTimer } from '../hooks/usePomodoroContext';
 import Timer from "../components/page-sections/home/Timer";
 import Buttons from "../components/page-sections/home/Buttons";
@@ -39,13 +40,20 @@ export default function Home() {
   };
 
   return (
-    <main className={`h-screen flex flex-col items-center ${isStudying ? "" : "bg-secondary-color"}`}>
+    <motion.main
+      initial={false}
+      animate={{
+        backgroundColor: isStudying ? "#1F1300" : "#1c0d0c"
+      }}
+      transition={{ duration: 1.5, ease: "easeInOut" }}
+      className="h-screen flex flex-col items-center overflow-hidden"
+    >
       <div className="w-screen pt-3 mb-10 hidden lg:grid lg:grid-cols-[1fr_2fr_1fr]">
         <div></div>
         <TopHeader className="lg:flex lg:justify-around lg:items-center lg:font-bold" />
-        <Language className="hidden lg:pr-10 lg:flex lg:justify-end"/>
+        <Language className="hidden lg:pr-10 lg:flex lg:justify-end" />
       </div>
-      
+
       <Overlay
         active={overlay}
         closeOverlay={() => setOverlay(false)}
@@ -80,6 +88,6 @@ export default function Home() {
           />
         </div>
       </div>
-    </main>
+    </motion.main>
   );
 }

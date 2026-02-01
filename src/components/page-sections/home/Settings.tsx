@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { useTranslation } from "react-i18next";
 import { handleChange } from '../../../utils/timer';
 import type TimerSettings from '../../../types/pomodoroType';
+
 
 interface SettingsProps {
     settings: boolean,
@@ -190,12 +192,14 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                         />
                     </li>
                     <li className='mt-5 flex justify-center'>
-                        <button
+                        <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
                             onClick={closeSettings}
-                            className='w-[100px] p-[0.2rem] rounded-lg font-bold text-[20px] bg-highlight'
+                            className='w-[100px] p-[0.2rem] rounded-lg font-bold text-[20px] bg-highlight active:bg-red-900 duration-200'
                         >
                             {t("home.settings.save")}
-                        </button>
+                        </motion.button>
                     </li>
                 </ul>
             </div>

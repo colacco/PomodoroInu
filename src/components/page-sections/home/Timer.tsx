@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { formatTime } from "../../../utils/timer";
 
@@ -21,7 +22,7 @@ export default function Timer({ currentTime, currentSession, isStudying, isPause
         if (firstStart) return t("home.timer.preparing");
         return isStudying ? t("home.timer.study") : t("home.timer.break");
     };
-    
+
 
     return (
         <article className="h-[350px] w-[350px] lg:h-[430px] lg:w-[430px] xl:h-[700px] xl:w-[700px] border-[2px] rounded-full border-white flex flex-col items-center justify-around bg-transparent">
@@ -29,7 +30,27 @@ export default function Timer({ currentTime, currentSession, isStudying, isPause
                 <p className="text-2xl">{getStatus()}</p>
                 <p className="text-6xl">{formatTime(currentTime)}</p>
             </div>
-            <img src={getImage()} alt="" className="w-[65%]" />
+            <motion.img
+                initial={{ opacity: 0, y: 0 }}
+                animate={{
+                    opacity: 1,
+                    y: isPaused || firstStart ? 0 : [0, -20, 0],
+                }}
+                transition={{
+                    y: isPaused || firstStart
+                        ? { duration: 0.5 }
+                        : {
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        },
+                    opacity: { duration: 0.5 }
+                }}
+                whileTap={isPaused ? { scale: 0.9 } : {}}
+                src={getImage()}
+                alt={t("home.timer.alt")}
+                className="w-[65%] cursor-pointer"
+            />
             <div className="flex gap-2">
                 <p className="text-2xl">{t("home.timer.session")}: {currentSession}</p>
             </div>

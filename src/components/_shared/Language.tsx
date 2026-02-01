@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 export default function Language({className}: {className: string}){
      const { t, i18n } = useTranslation();
@@ -20,7 +21,9 @@ export default function Language({className}: {className: string}){
                         id="lang" 
                         className="hidden" 
                     />
-                    <img 
+                    <motion.img
+                        whileHover={{ scale: 1.2 }}
+                        whileTap={{ scale: 0.8 }}
                         src={ isChecked ? "others/brazil.png" : "others/eua.png" }
                         alt={t("about.aboutheader.alt")} 
                         width={30}
