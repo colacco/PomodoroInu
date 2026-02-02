@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { useTranslation } from "react-i18next";
 import type TimerSettings from '../../../types/pomodoroType';
 
@@ -25,7 +24,7 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                 <div className="lg:hidden fixed top-0 left-0 h-screen w-screen flex flex-col items-center gap-10 bg-[rgba(0,0,0,0.5)] z-50">
                     <p onClick={closeSettings} className="w-full pr-5 pt-3 text-end text-3xl font-close font-bold cursor-pointer"> X </p>
                     <div className="w-[350px] p-10 border-2 rounded-3xl border-quaternary-color bg-tertiary-color">
-                        <ul className="flex flex-col gap-8">
+                        <ul className="flex flex-col gap-10">
                             <li className="flex items-center justify-between">
                                 <label htmlFor="language">{t("home.settings.language")}</label>
                                 <select
@@ -102,22 +101,14 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                                     onChange={(e) => onSettingsChange('sessions', e.target.value)}
                                 />
                             </li>
-                            <li className='flex justify-end'>
-                                <button
-                                    onClick={closeSettings}
-                                    className='w-[100px] p-[0.2rem] rounded-lg font-bold text-[20px] bg-highlight'
-                                >
-                                    {t("home.settings.save")}
-                                </button>
-                            </li>
                         </ul>
                     </div>
                 </div>
             )}
 
             {/* Versão inline para telas lg+ - sempre visível */}
-            <div className="hidden lg:block w-[330px] p-3 border-2 rounded-3xl border-quaternary-color bg-tertiary-color">
-                <ul className="flex flex-col gap-4">
+            <div className="hidden lg:block w-[330px] p-5 border-2 rounded-3xl border-quaternary-color bg-tertiary-color">
+                <ul className="flex flex-col gap-10">
                     <li className="flex items-center justify-between">
                         <label htmlFor="studyMin">{t("home.settings.study")}:</label>
                         <div className="flex gap-2 ">
@@ -181,16 +172,6 @@ export default function Settings({ settings, closeSettings, timerSettings, onSet
                             id="session"
                             onChange={(e) => onSettingsChange('sessions', e.target.value)}
                         />
-                    </li>
-                    <li className='mt-5 flex justify-center'>
-                        <motion.button
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            onClick={closeSettings}
-                            className='w-[100px] p-[0.2rem] rounded-lg font-bold text-[20px] bg-highlight active:bg-red-900 duration-200'
-                        >
-                            {t("home.settings.save")}
-                        </motion.button>
                     </li>
                 </ul>
             </div>
