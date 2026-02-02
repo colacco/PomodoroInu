@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="public/inu.png" alt="Inu Shiba" width="150" />
+  <img src="public/logo/icon.png" alt="Pomodoro Inu" width="150" />
   <h1>Pomodoro Inu</h1>
 
   <p>
