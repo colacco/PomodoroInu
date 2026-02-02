@@ -49,5 +49,5 @@ With a minimalist and warm design featuring a friendly Shiba Inu, the app create
 ---
 
 <div align="center">
-  <p>Made with 🧡 by <a href="https://github.com/GabrielColaco">Gabriel Colaço</a></p>
+  <p>Made with 🧡 by <a href="https://github.com/colacco" target="_blank">Gabriel Colaço</a></p>
 </div>
