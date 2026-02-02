@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  <img src="public/inu.png" alt="Inu Shiba" width="150" />
+  <h1>Pomodoro Inu</h1>
 
-Currently, two official plugins are available:
+  <p>
+    <strong>
+      A cute, focused, and customizable Pomodoro timer for your study sessions.
+    </strong>
+  </p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  <p>
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+    <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+    <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
+    <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  </p>
+</div>
 
-## React Compiler
+<br />
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## About the Project
 
-## Expanding the ESLint configuration
+**Pomodoro Inu** is an open-source web application designed to help students and professionals manage their time effectively using the Pomodoro Technique.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+With a minimalist and warm design featuring a friendly Shiba Inu, the app creates a cozy atmosphere that reduces study anxiety and improves focus.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Key Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Customizible Timer**: Configure your own study duration, break times, and number of sessions.
+- **Visual Feedback**: The interface adapts to "Study" and "Break" modes with distinct, warm color palettes.
+- **Reactive Settings**: Changes to settings update the timer immediately (when paused), saving you time.
+- **Focus Companion**: An animated Inu character accompanies you through your sessions.
+- **Internationalization**: Fully localized in English 🇺🇸 and Portuguese (Brazil) 🇧🇷.
+- **Mobile-First**: Works perfectly on desktops, tablets, and mobile devices.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Technologies Used
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **[React](https://reactjs.org/)**: UI Library.
+- **[TypeScript](https://www.typescriptlang.org/)**: Logic and type safety.
+- **[Vite](https://vitejs.dev/)**: Fast build tool and development server.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Utility-first CSS framework for styling.
+- **[Framer Motion](https://www.framer.com/motion/)**: For smooth animations.
+- **[react-i18next](https://react.i18next.com/)**: For internationalization.
+- **[GitHub Pages](https://pages.github.com/)**: Deployment platform.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+<div align="center">
+  <p>Made with 🧡 by <a href="https://github.com/GabrielColaco">Gabriel Colaço</a></p>
+</div>
