@@ -34,19 +34,38 @@ export const useTimer = (settings: TimerSettings) => {
         setIsStudying(true);
     }, [settings.sMin, settings.sSec]);
 
+    const lastTimeRef = useRef<number>(Date.now());
+
     // Main countdown effect
     useEffect(() => {
-        if (isPaused || currentTime <= 0) {
+        if (isPaused) {
             clearTimer();
             return;
         }
 
+        if (currentTime <= 0) {
+            clearTimer();
+            return;
+        }
+
+        lastTimeRef.current = Date.now();
+
         intervalRef.current = setInterval(() => {
-            setCurrentTime((prev) => prev - 1);
-        }, 1000);
+            const now = Date.now();
+            const delta = now - lastTimeRef.current;
+
+            if (delta >= 1000) {
+                const secondsPassed = Math.floor(delta / 1000);
+                setCurrentTime((prev) => {
+                    const nextTime = prev - secondsPassed;
+                    return nextTime < 0 ? 0 : nextTime;
+                });
+                lastTimeRef.current += secondsPassed * 1000;
+            }
+        }, 100);
 
         return () => clearTimer();
-    }, [isPaused, currentTime, clearTimer]);
+    }, [isPaused, clearTimer]);
 
     // Transition effect
     useEffect(() => {
